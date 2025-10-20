@@ -30,8 +30,8 @@ namespace PrimeNumbersAgain
             // +3 ensures that for small n values we don't underestimate the limit, e.g. n=1 should give limit=3 to include the prime number 2
             // the upper bound is calculated by multiplying n by the natural logarithm of n plus the natural logarithm of the natural logarithm of n
             // this gives a good approximation of where the nth prime lies
-            bool[] isComposite = new bool[limit + 1]; // if false, index is prime
-            int count = 0;
+            bool[] isComposite = new bool[limit + 1]; // bool array for all numbers up to the upper bound if false, index is prime
+            int count = 0; // count of primes found
             for (int i = 2; i <= limit; i++) // starts from the first prime then marks all multiples as composite (not prime)
             {
                 if (!isComposite[i]) // not composite, then prime
